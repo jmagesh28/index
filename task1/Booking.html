@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management Booking</title>
+    <link rel="stylesheet" href="styleee.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Room Booking</h1>
+        <p>Book your stay with us for an unforgettable experience</p>
+    </header>
+
+    <main>
+        <section class="room-list">
+            <h2>Available Rooms</h2>
+            <div id="roomContainer"></div>
+        </section>
+
+        <section class="booking-form">
+            <h2>Booking Form</h2>
+            <form id="bookingForm">
+                <label for="roomType">Room Type:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="">Select Room Type</option>
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Suite">Suite</option>
+                </select>
+
+                <label for="checkinDate">Check-in Date:</label>
+                <input type="date" id="checkinDate" name="checkinDate" required>
+
+                <label for="checkoutDate">Check-out Date:</label>
+                <input type="date" id="checkoutDate" name="checkoutDate" required>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" onclick="submitBooking()">Book Now</button>
+            </form>
+            <p id="bookingStatus"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Management. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

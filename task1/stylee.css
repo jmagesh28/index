@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: white;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: lightpink;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-info h2, .contact-form h2 {
+    margin-bottom: 1rem;
+    color: lightpink;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.contact-form button {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: lightpink;
+    color:white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: lightpink;
+    color:white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

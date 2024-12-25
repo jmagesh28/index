@@ -1,0 +1,114 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: lightcoral;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-form, .reviews {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.feedback-form h2, .reviews h2 {
+    margin-bottom: 1rem;
+    color: lightcoral;
+}
+
+.feedback-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.feedback-form input, .feedback-form select, .feedback-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.feedback-form button {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: lightcoral;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background-color: lightcoral;
+}
+
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+}
+
+.review-card h3 {
+    color: lightcoral;
+    font-size: 1.2rem;
+}
+
+.review-card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.review-card .rating {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: lightcoral;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

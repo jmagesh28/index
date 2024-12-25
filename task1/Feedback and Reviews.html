@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management Reviews & Feedback</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <header>
+        <h1>Reviews & Feedback</h1>
+        <p>We value your feedback! Please let us know how we did.</p>
+    </header>
+
+    <main>
+        <section class="feedback-form">
+            <h2>Leave Your Feedback</h2>
+            <form id="feedbackForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select Rating</option>
+                    <option value="5">Excellent</option>
+                    <option value="4">Very Good</option>
+                    <option value="3">Good</option>
+                    <option value="2">Fair</option>
+                    <option value="1">Poor</option>
+                </select>
+
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+            </form>
+            <p id="feedbackStatus"></p>
+        </section>
+
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div id="reviewsContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Management. All rights reserved.</p>
+    </footer>
+
+    <script src="scriptt.js"></script>
+</body>
+</html>
