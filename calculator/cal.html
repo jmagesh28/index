@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <style>
+        /* Reset some default styles */ 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+           /* Background Image Only */
+             background-image: url('cal.png'); /* Replace with your image path */
+             background-size: cover; /* Ensures the image covers the entire viewport */
+             background-repeat: no-repeat; /* Prevents the image from repeating */
+             background-position: center center; /* Centers the image */
+    
+             height: 100vh;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+}
+
+
+        .calculator {
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            padding: 20px;
+        }
+
+        .calculator .title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 10px;
+            text-align: right;
+            padding: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .display:focus {
+            outline: none;
+            background-color: #d0d0d0;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+        }
+
+        .buttons button {
+            padding: 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Button Colors */
+        .buttons button.operator {
+            background-color: #ff9500;
+            color: white;
+        }
+
+        .buttons button.equal {
+            background-color: #34c759;
+            color: white;
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .buttons button.clear {
+            background-color: #ff3b30;
+            color: white;
+        }
+
+        .buttons button.number {
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Zero Button spans two columns */
+        .buttons button.zero {
+            grid-column: span 2;
+        }
+
+        /* Hover Effects */
+        .buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Active (Pressed) State */
+        .buttons button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .calculator {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .buttons button {
+                padding: 15px;
+                font-size: 1rem;
+            }
+
+            .display {
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="title">Simple Calculator</div>
+        <input type="text" id="result" class="display" readonly>
+        <div class="buttons">
+            <!-- First Row -->
+            <button class="clear" onclick="clr()">C</button>
+            <button class="operator" onclick="dis('/')">/</button>
+            <button class="operator" onclick="dis('*')">*</button>
+            <button class="operator" onclick="dis('-')">-</button>
+
+            <!-- Second Row -->
+            <button class="number" onclick="dis('7')">7</button>
+            <button class="number" onclick="dis('8')">8</button>
+            <button class="number" onclick="dis('9')">9</button>
+            <button class="operator" onclick="dis('+')">+</button>
+
+            <!-- Third Row -->
+            <button class="number" onclick="dis('4')">4</button>
+            <button class="number" onclick="dis('5')">5</button>
+            <button class="number" onclick="dis('6')">6</button>
+            <button class="equal" onclick="solve()">=</button>
+
+            <!-- Fourth Row -->
+            <button class="number" onclick="dis('1')">1</button>
+            <button class="number" onclick="dis('2')">2</button>
+            <button class="number" onclick="dis('3')">3</button>
+            <button class="equal" style="display:none;"></button> <!-- Placeholder for grid alignment -->
+
+            <!-- Fifth Row -->
+            <button class="number zero" onclick="dis('0')">0</button>
+            <button class="number" onclick="dis('.')">.</button>
+            <button class="equal" style="display:none;"></button> <!-- Placeholder for grid alignment -->
+            <button class="equal" style="display:none;"></button> <!-- Placeholder for grid alignment -->
+        </div>
+    </div>
+
+    <script>
+        // Function to display value
+        function dis(val) {
+            document.getElementById("result").value += val;
+        }
+
+        // Function to evaluate the expression and return result
+        function solve() {
+            try {
+                let x = document.getElementById("result").value;
+                // Validate the expression to prevent potential security issues with eval
+                if (/^[0-9+\-*/.() ]+$/.test(x)) {
+                    let y = eval(x);
+                    document.getElementById("result").value = y;
+                } else {
+                    document.getElementById("result").value = "Error";
+                }
+            } catch (error) {
+                document.getElementById("result").value = "Error";
+            }
+        }
+
+        // Function to clear the display
+        function clr() {
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
